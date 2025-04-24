@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tizz-mobile",
-    "slug": "tizz-mobile",
+    "name": "tizz-isme",
+    "slug": "tizz-isme-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dthanhff318.tizzismeapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "98e0d417-5380-48a3-9d36-0be7855517d0"
+      }
     }
   }
 }
