@@ -24,7 +24,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   bgThumb: {
     width: "100%",
-    height: 250,
+    height: 180,
     resizeMode: "cover",
   },
   avatar: {
@@ -43,5 +43,6 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
+    color: "white",
   },
 });
