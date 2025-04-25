@@ -43,14 +43,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 2 },
-    elevation: 3, // Android shadow
+    elevation: 3,
     height: 250,
+    overflow: "hidden",
   },
   thumbnail: {
     width: "100%",
     height: "50%",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
   },
   cardBody: {
     padding: 10,
@@ -58,6 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     flex: 1,
+    backgroundColor: "white",
   },
   title: {
     fontSize: 14,

@@ -4,6 +4,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import TopicCard from "@/components/page/home/TopicCard";
 import { useCallback, useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function TabTwoScreen() {
   const [refreshing, setRefreshing] = useState(false);
@@ -24,22 +25,30 @@ export default function TabTwoScreen() {
       <ThemedText type="title" style={styles.titlePage}>
         English conversation
       </ThemedText>
-      <ScrollView
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-      >
-        <ThemedView style={styles.gridContainer}>
-          {items.map((item, index) => (
-            <ThemedView key={index} style={styles.gridItem}>
-              <TopicCard
-                thumbnail={require("@/assets/images/cardbg.jpg")}
-                title={"Playing game"}
-              />
-            </ThemedView>
-          ))}
-        </ThemedView>
-      </ScrollView>
+      <ThemedView style={styles.scrollWrapper}>
+        <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
+          <ThemedView style={styles.gridContainer}>
+            {items.map((item, index) => (
+              <ThemedView key={index} style={styles.gridItem}>
+                <TopicCard
+                  thumbnail={require("@/assets/images/cardbg.jpg")}
+                  title={"Playing game"}
+                />
+              </ThemedView>
+            ))}
+          </ThemedView>
+        </ScrollView>
+        <LinearGradient
+          colors={["#00000000", "#000000"]} // Màu đen trong suốt -> Màu đen đậm
+          start={{ x: 0, y: 0 }} // Bắt đầu từ trên
+          end={{ x: 0, y: 1 }}
+          style={styles.shadowBox}
+        />
+      </ThemedView>
     </ThemedView>
   );
 }
@@ -71,10 +80,23 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
     gap: 10,
   },
   gridItem: {
     width: "45%",
+    borderRadius: 10,
+    overflow: "hidden",
+  },
+  scrollWrapper: {
+    position: "relative",
+    flex: 1,
+  },
+  shadowBox: {
+    position: "absolute",
+    bottom: 0,
+    height: 10,
+    width: "100%",
   },
 });
