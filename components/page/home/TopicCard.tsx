@@ -1,4 +1,5 @@
 import { ThemedView } from "@/components/ThemedView";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   View,
@@ -18,6 +19,7 @@ interface CardProps {
 }
 
 const TopicCard = ({ thumbnail, title, description, onPress }: CardProps) => {
+  const router = useRouter();
   return (
     <ThemedView style={styles.card}>
       <Image
@@ -27,7 +29,7 @@ const TopicCard = ({ thumbnail, title, description, onPress }: CardProps) => {
       <ThemedView style={styles.cardBody}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
-        <Pressable style={styles.button} onPress={onPress}>
+        <Pressable style={styles.button} onPress={() => router.push("/topic")}>
           <Text style={styles.buttonText}>Listen</Text>
         </Pressable>
       </ThemedView>

@@ -23,7 +23,7 @@ export default function TabTwoScreen() {
         style={styles.bgThumb}
       />
       <ThemedText type="title" style={styles.titlePage}>
-        English conversation
+        Gallery
       </ThemedText>
       <ThemedView style={styles.scrollWrapper}>
         <ScrollView
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   bgThumb: {
     width: "100%",
-    height: 180,
+    height: 150,
     resizeMode: "cover",
     opacity: 0.8,
   },
